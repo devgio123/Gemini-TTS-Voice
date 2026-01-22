@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <title>Gemini Long-Form TTS Studio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <style>
+    :root {
+      /* Light Mode */
+      --bg-primary: 248 250 252;      /* slate-50 */
+      --bg-secondary: 255 255 255;    /* white */
+      --bg-tertiary: 241 245 249;     /* slate-100 */
+      
+      --text-primary: 15 23 42;       /* slate-900 */
+      --text-secondary: 71 85 105;    /* slate-600 */
+      --text-muted: 148 163 184;      /* slate-400 */
+      
+      --border-color: 226 232 240;    /* slate-200 */
+      
+      --brand-primary: 124 58 237;    /* violet-600 */
+      --brand-hover: 109 40 217;      /* violet-700 */
+      --brand-secondary: 168 85 247;  /* purple-500 */
+      
+      --status-success: 16 185 129;   /* emerald-500 */
+      --status-warning: 245 158 11;   /* amber-500 */
+      --status-error: 244 63 94;      /* rose-500 */
+    }
+
+    .dark {
+      /* Dark Mode */
+      --bg-primary: 9 9 11;           /* zinc-950 */
+      --bg-secondary: 24 24 27;       /* zinc-900 */
+      --bg-tertiary: 39 39 42;        /* zinc-800 */
+      
+      --text-primary: 250 250 250;    /* zinc-50 */
+      --text-secondary: 161 161 170;  /* zinc-400 */
+      --text-muted: 82 82 91;         /* zinc-600 */
+      
+      --border-color: 39 39 42;       /* zinc-800 */
+      
+      --brand-primary: 139 92 246;    /* violet-500 */
+      --brand-hover: 124 58 237;      /* violet-600 */
+      --brand-secondary: 167 139 250; /* violet-400 */
+
+      --status-success: 52 211 153;   /* emerald-400 */
+      --status-warning: 251 191 36;   /* amber-400 */
+      --status-error: 251 113 133;    /* rose-400 */
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            background: {
+              primary: 'rgb(var(--bg-primary) / <alpha-value>)',
+              secondary: 'rgb(var(--bg-secondary) / <alpha-value>)',
+              tertiary: 'rgb(var(--bg-tertiary) / <alpha-value>)',
+            },
+            content: {
+              primary: 'rgb(var(--text-primary) / <alpha-value>)',
+              secondary: 'rgb(var(--text-secondary) / <alpha-value>)',
+              muted: 'rgb(var(--text-muted) / <alpha-value>)',
+            },
+            brand: {
+              primary: 'rgb(var(--brand-primary) / <alpha-value>)',
+              hover: 'rgb(var(--brand-hover) / <alpha-value>)',
+              secondary: 'rgb(var(--brand-secondary) / <alpha-value>)',
+            },
+            border: {
+              DEFAULT: 'rgb(var(--border-color) / <alpha-value>)',
+            },
+            status: {
+              success: 'rgb(var(--status-success) / <alpha-value>)',
+              warning: 'rgb(var(--status-warning) / <alpha-value>)',
+              error: 'rgb(var(--status-error) / <alpha-value>)',
+            }
+          },
+          animation: {
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          }
+        }
+      }
+    }
+  </script>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-background-primary text-content-primary min-h-screen selection:bg-brand-primary/30 selection:text-brand-primary">
+  <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>

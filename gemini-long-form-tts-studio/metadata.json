@@ -1,0 +1,5 @@
+{
+  "name": "Gemini Long-Form TTS Studio",
+  "description": "A powerful React application for generating long-form text-to-speech audio using Gemini, featuring script segmentation, parallel processing, and multiple voice styles.",
+  "requestFramePermissions": []
+}
